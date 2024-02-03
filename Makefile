@@ -17,3 +17,15 @@ pip::
 	pip install -r requirements.dev.txt
 PHONY: pip
 
+# Docker
+up::
+	$(MAKE) down || true
+	docker-compose rm -f || true
+	docker-compose up --build -d
+PHONY: up
+
+enter::
+	docker-compose exec anaconda /bin/bash
+
+down::
+	docker-compose down
