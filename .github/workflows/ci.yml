@@ -32,7 +32,7 @@ jobs:
         python -m pip install -r requirements.txt
         python -m pip install -r requirements.dev.txt
     - name: Lint
-      if: matrix.os != 'windows-latest'
+#      if: matrix.os != 'windows-latest'
       run: |
         pylint src/ tests/
     - name: Tests
