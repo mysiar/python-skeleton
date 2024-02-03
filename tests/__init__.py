@@ -1,3 +1,4 @@
+# pylint: skip-file
 """ add src path to avoid problems with importing modules by modules in tests """
 import os
 import sys

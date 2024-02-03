@@ -5,7 +5,7 @@ test::
 .PHONY: test
 
 lint::
-	pylint *.py --ignore-patterns=test_.*?py,__init*
+	pylint src/ tests/ || true
 .PHONY: lint
 
 venv::

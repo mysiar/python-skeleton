@@ -1,4 +1,6 @@
-""" Dummy"""
+"""
+    Dummy
+"""
 
 
 def returns(data):
