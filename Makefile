@@ -1,18 +1,19 @@
 SHELL := /bin/bash
 
-
-ifeq ($(uname_S), Windows)
-    venv\Scripts\activate.bat
-endif
-
-ifeq ($(uname_S), Linux)
-    . venv/bin/activate
-endif
-
-test:
+test::
 	python -m unittest discover tests
 .PHONY: test
 
-lint:
+lint::
 	pylint *.py --ignore-patterns=test_.*?py,__init*
 .PHONY: lint
+
+venv::
+	python3 -m venv venv
+.PHONY: venv
+
+pip::
+	pip install -r requirements.txt
+	pip install -r requirements.dev.txt
+PHONY: pip
+
